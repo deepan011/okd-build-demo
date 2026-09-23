@@ -1,0 +1,19 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+
+metadata:
+  name: myapp-build
+
+spec:
+  source:
+    git:
+      uri: https://github.com/deepan011/okd-build-demo.git
+      ref: okd-build-demo
+
+  strategy:
+    dockerStrategy: {}
+
+  output:
+    to:
+      kind: ImageStreamTag
+      name: myapp:latest
